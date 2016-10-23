@@ -19,9 +19,16 @@ REPAIR
 <li><a href="#services">SERVICES</a></li>
 <li><a href="#pricing">PRICING</a></li>
 <li><a href="#work">WORK</a></li>
-<!-- <li><a href="#team">TEAM</a></li> -->
-<!-- <li><a href="#grid">GRID</a></li>  Comment grid section as no use right now  -->   
 <li><a href="#contact">CONTACT</a></li>
+<% if user_signed_in? %>
+  <li>
+  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+  </li>
+<% else %>
+  <li>
+  <%= link_to('Login', new_user_session_path)  %>  
+  </li>
+<% end %>
 </ul>
 </div>
 
@@ -695,3 +702,19 @@ consectetur tellus nec, porttitor nulla. -->
 
 </div>
 </section>
+
+
+<script type="text/javascript">
+	/*====================================
+VAGAS SLIDESHOW SCRIPTS
+======================================*/
+$.vegas('slideshow', {
+backgrounds: [
+{ src: 'assets/1.jpg', fade: 1000, delay: 9000 },
+{ src: 'assets/2.jpg', fade: 1000, delay: 9000 },
+]
+})('overlay', {
+/** SLIDESHOW OVERLAY IMAGE **/
+src: 'assets/06.png' // THERE ARE TOTAL 01 TO 15 .png IMAGES AT THE PATH GIVEN, WHICH YOU CAN USE HERE
+});
+</script>

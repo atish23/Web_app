@@ -1,29 +1,27 @@
-<h2>Sign up</h2>
+<style type="text/css">
+  body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #5d5d5d;
+}
+</style>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<div class="container">
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name),html: {:class => "form-signin"}) do |f| %>
   <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
+    <h4 class="form-signin-heading">Please sign Up</h2>
+    <%= f.label :email ,class: "form-signin-heading"%><br />
+    <%= f.email_field :email, autofocus: true,class: "form-control", required: true  %>
+    <%= f.label :password ,class: "form-signin-heading"%><br />
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+    <%= f.password_field :password, autocomplete: "off" ,class: "form-control"%>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+    <%= f.label :password_confirmation ,class: "form-signin-heading"%><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" ,class: "form-control"%>
+    <%= f.submit "SIGN UP",class: 'btn btn-lg btn-primary btn-block' %>
+  <%end%>
+  <br />
+  <!-- <%#= link_to "Sign UP", new_user_registration_path, class: 'btn btn-md btn-warning' %> -->
+</div> <!-- /container -->
