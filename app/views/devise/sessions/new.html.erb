@@ -19,8 +19,11 @@
     </div>
     <% end -%>
     <%= f.submit "Log in",class: 'btn btn-lg btn-primary btn-block' %>
+      <br />
+
+      <%= link_to "Sign UP", new_user_registration_path, class: 'btn btn-lg btn-primary btn-warning btn-block' %>
+
   <%end%>
-  <br />
-  <%= link_to "Sign UP", new_user_registration_path, class: 'btn btn-md btn-warning' %>
+
 </div> <!-- /container -->
 <%#= render "devise/shared/links" %>
